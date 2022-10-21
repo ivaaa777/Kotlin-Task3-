@@ -225,33 +225,42 @@ class MainActivity : AppCompatActivity() {
             if(n1 != "" && n2 != "") {
                 if(opera === "+" && "." !in input){
                     result.text = (n1.toInt() + n2.toInt()).toString()
+                    n1 = (n1.toInt() + n2.toInt()).toString()
                 }else if(opera === "+" && "." in input){
                     result.text = (n1.toFloat() + n2.toFloat()).toString()
+                    n1 = (n1.toFloat() + n2.toFloat()).toString()
                 }else if(opera === "-" && "." !in input){
                     result.text = (n1.toInt() - n2.toInt()).toString()
+                    n1 = (n1.toInt() - n2.toInt()).toString()
                 }else if(opera === "-" && "." in input){
                     result.text = (n1.toFloat() - n2.toFloat()).toString()
+                    n1 = (n1.toFloat() - n2.toFloat()).toString()
                 }else if(opera === "/" && "." !in input){
                     result.text = (n1.toInt() / n2.toInt()).toString()
+                    n1 = (n1.toInt() / n2.toInt()).toString()
                 }else if(opera === "/" && "." in input){
                     result.text = (n1.toFloat() / n2.toFloat()).toString()
+                    n1 = (n1.toFloat() / n2.toFloat()).toString()
                 }else if(opera === "*" && "." !in input){
                     result.text = (n1.toInt() * n2.toInt()).toString()
+                    n1 = (n1.toInt() * n2.toInt()).toString()
                 }else if(opera === "*" && "." in input){
                     result.text = (n1.toFloat() * n2.toFloat()).toString()
+                    n1 = (n1.toFloat() * n2.toFloat()).toString()
                 }else if(opera === "%" && "." !in input){
                     result.text = (n1.toInt() % n2.toInt()).toString()
+                    n1 = (n1.toInt() % n2.toInt()).toString()
                 }else if(opera === "%" && "." in input){
                     result.text = (n1.toFloat() % n2.toFloat()).toString()
+                    n1 = (n1.toFloat() % n2.toFloat()).toString()
                 }
             }else if(opera === "√" && "." !in n2){
                 result.text = sqrt(n2.toFloat()).toString()
             }else if(opera === "√" && "." in n2){
                 result.text = sqrt(n2.toFloat()).toString()
             }
-            n1 = ""
             n2 = ""
-            input = ""
+            input = n1
             opera = ""
         }
         buTTrest.setOnClickListener{
