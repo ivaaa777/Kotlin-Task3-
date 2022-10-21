@@ -254,10 +254,12 @@ class MainActivity : AppCompatActivity() {
                     result.text = (n1.toFloat() % n2.toFloat()).toString()
                     n1 = (n1.toFloat() % n2.toFloat()).toString()
                 }
-            }else if(opera === "√" && "." !in n2){
+            }else if(opera === "√" && n2 != "" && "." !in n2){
                 result.text = sqrt(n2.toFloat()).toString()
-            }else if(opera === "√" && "." in n2){
+                n1 = sqrt(n2.toFloat()).toString()
+            }else if(opera === "√" && n2 != "" && "." in n2){
                 result.text = sqrt(n2.toFloat()).toString()
+                n1 = sqrt(n2.toFloat()).toString()
             }
             n2 = ""
             input = n1
